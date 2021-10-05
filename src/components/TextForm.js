@@ -5,6 +5,7 @@ export default function TextForm(props) {
     // console.log("Button Clicked " + text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Changed into Uppercase", "success");
   };
   // onChange event is called so that we can type in the text box and see changes
   const handleChange = (event) => {
@@ -16,17 +17,20 @@ export default function TextForm(props) {
   const handleSpace = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Extra spaces terminated", "success");
   };
 
   const handleCopy = () => {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text copied", "success");
   };
 
   const handleClearClick = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Text Cleared", "success");
   };
   // Using state component in function based method
   const [text, setText] = useState("");
@@ -41,7 +45,7 @@ export default function TextForm(props) {
         <div className="mb-3">
           <textarea
             className="form-control"
-            // value={text}
+            value={text}
             id="myBox"
             rows="8"
             onChange={handleChange}
