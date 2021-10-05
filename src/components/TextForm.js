@@ -29,19 +29,26 @@ export default function TextForm(props) {
     setText(newText);
   };
   // Using state component in function based method
-  const [text, setText] = useState("Enter text here");
+  const [text, setText] = useState("");
   //   setText("Text here");
   return (
     <>
-      <div className="container">
+      <div
+        className="container"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
         <h2>{props.heading}</h2>
         <div className="mb-3">
           <textarea
             className="form-control"
-            value={text}
+            // value={text}
             id="myBox"
             rows="8"
             onChange={handleChange}
+            style={{
+              backgroundColor: props.mode === "dark" ? "#070a1c" : "white",
+              color: props.mode === "dark" ? "white" : "black",
+            }}
           ></textarea>
         </div>
         <button className="btn btn-success mx-1" onClick={handleClick}>
@@ -57,13 +64,16 @@ export default function TextForm(props) {
           Clear text
         </button>
       </div>
-      <div className="container">
+      <div
+        className="container my-3"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
         <h2>Summary</h2>
         <p>Words Count : {text.split(" ").length} </p>
         <p>Letters Count: {text.length} </p>
         <p>Time taken to read per minute: {0.008 * text.split(" ").length} </p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Enter the text to preview here"} </p>
       </div>
     </>
   );
