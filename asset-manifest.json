@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/TextConvertor-React/static/css/main.a617e044.chunk.css",
+    "main.js": "/TextConvertor-React/static/js/main.7c57f3f3.chunk.js",
+    "main.js.map": "/TextConvertor-React/static/js/main.7c57f3f3.chunk.js.map",
+    "runtime-main.js": "/TextConvertor-React/static/js/runtime-main.c6c7192a.js",
+    "runtime-main.js.map": "/TextConvertor-React/static/js/runtime-main.c6c7192a.js.map",
+    "static/js/2.23dea66d.chunk.js": "/TextConvertor-React/static/js/2.23dea66d.chunk.js",
+    "static/js/2.23dea66d.chunk.js.map": "/TextConvertor-React/static/js/2.23dea66d.chunk.js.map",
+    "static/js/3.4d163d82.chunk.js": "/TextConvertor-React/static/js/3.4d163d82.chunk.js",
+    "static/js/3.4d163d82.chunk.js.map": "/TextConvertor-React/static/js/3.4d163d82.chunk.js.map",
+    "index.html": "/TextConvertor-React/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/TextConvertor-React/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.23dea66d.chunk.js.LICENSE.txt": "/TextConvertor-React/static/js/2.23dea66d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c6c7192a.js",
+    "static/js/2.23dea66d.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.7c57f3f3.chunk.js"
+  ]
+}
