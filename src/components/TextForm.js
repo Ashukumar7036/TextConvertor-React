@@ -55,16 +55,19 @@ export default function TextForm(props) {
             }}
           ></textarea>
         </div>
-        <button className="btn btn-success mx-1" onClick={handleClick}>
+        <button className="btn btn-success mx-1 my-1" onClick={handleClick}>
           Convert to upper text
         </button>
-        <button className="btn btn-success mx-1" onClick={handleSpace}>
+        <button className="btn btn-success mx-1 my-1" onClick={handleSpace}>
           Remove Extra spaces
         </button>
-        <button className="btn btn-success mx-1" onClick={handleCopy}>
+        <button className="btn btn-success mx-1 my-1" onClick={handleCopy}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleClearClick}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleClearClick}
+        >
           Clear text
         </button>
       </div>
@@ -73,9 +76,22 @@ export default function TextForm(props) {
         style={{ color: props.mode === "dark" ? "white" : "black" }}
       >
         <h2>Summary</h2>
-        <p>Words Count : {text.split(" ").length} </p>
+        <p>
+          Words Count :{" "}
+          {
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+        </p>
         <p>Letters Count: {text.length} </p>
-        <p>Time taken to read per minute: {0.008 * text.split(" ").length} </p>
+        <p>
+          Time taken to read per minute:{" "}
+          {0.008 *
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length}{" "}
+        </p>
         <h2>Preview</h2>
         <p>{text.length > 0 ? text : "Enter the text to preview here"} </p>
       </div>

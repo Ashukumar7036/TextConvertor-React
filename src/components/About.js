@@ -1,29 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function About() {
-  // Initial mystyle state- To change values use setMyStyle
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
-  //   Using state to set the text of button component
-  const [btnText, setBtnText] = useState("Enable Dark mode");
-
-  const toggleMode = () => {
-    if (myStyle.color === "black") {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-        border: "1px solid white",
-      });
-      setBtnText("Enable Light mode");
-    } else {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
-      setBtnText("Enable Dark mode");
-    }
+export default function About(props) {
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "#070a1c",
+    backgroundColor: props.mode === "dark" ? "#070a1c" : "white",
   };
 
   return (
@@ -41,7 +21,7 @@ export default function About() {
               aria-controls="collapseOne"
               style={myStyle}
             >
-              Accordion Item #1
+              <strong>Accordion Item #1</strong>
             </button>
           </h2>
           <div
@@ -73,7 +53,7 @@ export default function About() {
               aria-controls="collapseTwo"
               style={myStyle}
             >
-              Accordion Item #2
+              <strong>Accordion Item #2</strong>
             </button>
           </h2>
           <div
@@ -105,7 +85,7 @@ export default function About() {
               aria-controls="collapseThree"
               style={myStyle}
             >
-              Accordion Item #3
+              <strong>Accordion Item #3</strong>
             </button>
           </h2>
           <div
@@ -126,11 +106,6 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="container">
-        <button className="btn btn-primary my-3" onClick={toggleMode}>
-          {btnText}
-        </button>
       </div>
     </div>
   );
